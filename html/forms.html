@@ -1,0 +1,22 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>Upload article</title>
+ </head>
+
+ <body>
+ 	<h2>upload an article</h2>
+
+ 	<form method="POST" action="/upload" enctype="multipart/form-data">
+ 		<div><label>title</label><input type="text" name="title" required="required"></div>
+ 		<div><label>description</label><input type="text" name="description" required="required"></div>
+ 		<div><label>upload icon image file</label><input type='file' name='icon' accept="image/jpg, image/pjpeg" required="required"></div>
+ 		<div><label>upload content html file</label><input type='file' name='content' accept="text/html" required="required"></div>
+ 		<div><label>upload sound file</label><input type='file' name='sound' accept="audio/mp3" required="required"></div>
+ 		<div><input type="submit" value="upload"/></div>
+ 	</form>
+
+ </body>
+
+ </html> 
