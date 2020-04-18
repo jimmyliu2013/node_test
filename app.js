@@ -25,8 +25,6 @@ var formidable = require('formidable');
 
 var Item = require('./models/item.js');
 
-
-
 app.get('/done',function(req,res){
 	res.type('text/plain');
 	res.send('Done!');
@@ -56,9 +54,9 @@ function saveToDatabase(res, upload_title, upload_description, files) {
 			id: new_id,
 			title: upload_title,
 			description: upload_description,
-			iconSrc: BASE_URL + "/icon/" + new_id.jpg,
-			contentSrc: BASE_URL + "/html/" + new_id.html,
-			soundSrc: BASE_URL + "/sound/" + new_id.mp3,
+			iconSrc: "/icon/" + new_id.jpg,
+			contentSrc: "/html/" + new_id.html,
+			soundSrc: "/sound/" + new_id.mp3,
 		}).save();
 
 		var icon = files.icon;
@@ -112,9 +110,9 @@ app.get('/api/item/:skip/:count', function(req,res){
 				id: a.id,
 				title: a.title,
 				description: a.description,
-				iconSrc: a.iconSrc,
-				contentSrc: a.contentSrc,
-				soundSrc: a.soundSrc,
+				iconSrc: BASE_URL + a.iconSrc,
+				contentSrc: BASE_URL + a.contentSrc,
+				soundSrc: BASE_URL + a.soundSrc,
 			}
 		}));
 
